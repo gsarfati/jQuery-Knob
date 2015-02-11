@@ -112,6 +112,7 @@
                     displayPrevious: this.$.data('displayprevious'),
                     fgColor: this.$.data('fgcolor') || '#87CEEB',
                     inputColor: this.$.data('inputcolor'),
+                    canvasId: this.$.data('canvasId'),
                     font: this.$.data('font') || 'Arial',
                     fontWeight: this.$.data('font-weight') || 'bold',
                     inline: false,
@@ -180,6 +181,7 @@
 
             // adds needed DOM elements (canvas, div)
             this.$c = $(document.createElement('canvas')).attr({
+                id: this.o.canvasId,
                 width: this.o.width,
                 height: this.o.height
             });
@@ -778,7 +780,6 @@
 
             c.beginPath();
             c.strokeStyle = this.h2rgba(this.fgColor(this.cv, this.o.max), 1);
-            console.log(this.o.max);
             c.arc(this.xy, this.xy, this.radius, a.s, a.e, a.d);
             c.stroke();
         };

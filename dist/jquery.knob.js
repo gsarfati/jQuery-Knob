@@ -356,6 +356,7 @@
                 if (s.cH && (s.cH(v) === false)) return;
 
                 s.change(s._validate(v));
+                s.val(s.cv);
                 s._draw();
             };
 
